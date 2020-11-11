@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 
 import { NgRedux, NgReduxModule } from '@angular-redux/store';
 import { IAppState, rootReducer, INITIAL_STATE } from './store';
+import { TodoOverviewComponent } from './todo-overview/todo-overview.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoOverviewComponent
   ],
   imports: [
     BrowserModule,
