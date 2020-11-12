@@ -3,7 +3,7 @@
     Last Update: {{(lastUpdate | async) | date:'mediumTime'}}
   </span>
   <span>
-    Total items: {{todos.length}}
+    Total items: {{(todos | async).length}}
   </span>
 </p>
 
