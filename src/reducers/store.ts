@@ -1,11 +1,5 @@
-import { ITodo } from './models/todo';
-import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, REMOVE_ALL_TODOS } from './models/actions';
-
-export interface IAppState {
-  todos: ITodo[];
-  lastUpdate: Date;
-  nextId: number;
-}
+import { ITodo, IAppState } from '../app/models';
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, REMOVE_ALL_TODOS } from '../app/actions/actions';
 
 export const INITIAL_STATE: IAppState = {
   todos: [],
