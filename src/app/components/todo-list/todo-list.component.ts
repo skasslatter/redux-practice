@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
 import { IAppState } from '../../store';
-import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../../actions';
+import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../../models/actions';
 import { ITodo } from '../../models/todo';
 
 
