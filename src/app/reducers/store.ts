@@ -1,5 +1,5 @@
-import { ITodo, IAppState } from '../app/models';
-import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, REMOVE_ALL_TODOS } from '../app/actions/actions';
+import { ITodo, IAppState } from '../models';
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, REMOVE_ALL_TODOS } from '../actions/actions';
 
 export const INITIAL_STATE: IAppState = {
   todos: [],
@@ -9,9 +9,9 @@ export const INITIAL_STATE: IAppState = {
 
 export function rootReducer(state, action): any {
   switch (action.type) {
+
     case ADD_TODO:
       action.todo.id = state.nextId;
-
       return {
         ...state,
         todos: [
