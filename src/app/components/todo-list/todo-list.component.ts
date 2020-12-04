@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
 import { ITodo, IAppState } from '../../models';
 import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../../actions/actions';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-list',
@@ -11,16 +12,17 @@ import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../../actions/actions';
 export class TodoListComponent {
   @select() todos;
 
-  model: ITodo = {
-    id: 0,
-    description: '',
-    responsible: '',
-    priority: 'low',
-    isCompleted: false
-  };
+  model = new FormGroup({
+    id: new FormControl(0),
+    description: new FormControl(''),
+    responsible: new FormControl(''),
+    priority: new FormControl('low'),
+    isCompleted: new FormControl(false),
+  });
 
-  constructor(
-    private ngRedux: NgRedux<IAppState>
+
+constructor(
+  private ngRedux: NgRedux<IAppState>
   ) { }
 
   onSubmit(): void {

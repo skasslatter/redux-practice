@@ -11,13 +11,13 @@ export function rootReducer(state, action): any {
   switch (action.type) {
 
     case ADD_TODO:
-      action.todo.id = state.nextId;
       return {
         ...state,
         todos: [
           ...state.todos,
           {
-            ...action.todo
+            ...action.todo.value,
+            id: state.nextId
           }
         ],
         lastUpdate: new Date(),
